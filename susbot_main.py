@@ -45,20 +45,20 @@ class BotClass():
     #Simon - Refactored Colors into getting saved into a dictionary via a for loop. Also renamed cycles according to Keystrokes
 
     def get_colors(self): 
-            #setting up the colors for fast color switching:
-            self.color_dict = {}
-            for color_name,x in zip(["white","grey1","grey2","grey3","grey4","black","green1","green2","green3","green5","yellow1","yellow2","yellow3","yellow4","brown1","brown2","brown3","red1","red2","red3","brown4","peach1","peach2","peach3","pink1","pink2","pink3","pink4","blue1","blue2","blue3","blue4","blue5","blue6","blue7"],range(0,34)):
-                path = self.driver.find_elements_by_xpath('//*[@id="palette-buttons"]/a')[x]
-                self.color_dict.update({f"{color_name}":path})
-            self.Colors_W =  cycle([self.color_dict.get("grey4"), self.color_dict.get("grey3"), self.color_dict.get("grey2"), self.color_dict.get("grey1")])
-            self.Colors_A =  cycle([self.color_dict.get("green1"), self.color_dict.get("green2"), self.color_dict.get("green3"), self.color_dict.get("green5")])
-            self.Colors_S =  cycle([self.color_dict.get("red1"), self.color_dict.get("red2"), self.color_dict.get("red3")])
-            self.Colors_D =  cycle([self.color_dict.get("brown1"), self.color_dict.get("brown2"), self.color_dict.get("brown3"), self.color_dict.get("brown4"), self.color_dict.get("grey4"), self.color_dict.get("peach3"), self.color_dict.get("white")])
-            self.Colors_AW = cycle([self.color_dict.get("yellow1"), self.color_dict.get("yellow2"), self.color_dict.get("yellow3"), self.color_dict.get("yellow4")])
-            self.Colors_WD = cycle([self.color_dict.get("brown1"), self.color_dict.get("brown2"), self.color_dict.get("brown3"), self.color_dict.get("brown4")])
-            self.Colors_DS = cycle([self.color_dict.get("black"), self.color_dict.get("white")])
-            self.Colors_SA = cycle([self.color_dict.get("blue1"),self.color_dict.get("blue2"),self.color_dict.get("blue3"),self.color_dict.get("blue4"),self.color_dict.get("blue5"),self.color_dict.get("blue6"),self.color_dict.get("blue7")])
-            self.Colors_ALL = cycle([self.color_dict.get("white"),self.color_dict.get("grey1"),self.color_dict.get("grey2"),self.color_dict.get("grey3"),self.color_dict.get("grey4"),self.color_dict.get("black"),self.color_dict.get("green1"),self.color_dict.get("green2"),self.color_dict.get("green3"),self.color_dict.get("green5"),self.color_dict.get("yellow1"),self.color_dict.get("yellow2"),self.color_dict.get("yellow3"),self.color_dict.get("yellow4"),self.color_dict.get("brown1"),self.color_dict.get("brown2"),self.color_dict.get("brown3"),self.color_dict.get("red1"),self.color_dict.get("red2"),self.color_dict.get("red3"),self.color_dict.get("brown4"),self.color_dict.get("peach1"),self.color_dict.get("peach2"),self.color_dict.get("peach3"),self.color_dict.get("pink1"),self.color_dict.get("pink2"),self.color_dict.get("pink3"),self.color_dict.get("pink4"),self.color_dict.get("blue1"),self.color_dict.get("blue2"),self.color_dict.get("blue3"),self.color_dict.get("blue4"),self.color_dict.get("blue5"),self.color_dict.get("blue6"),self.color_dict.get("blue7")])
+        #setting up the colors for fast color switching:
+        self.color_dict = {}
+        for color_name,x in zip(["white","grey1","grey2","grey3","grey4","black","green1","green2","green3","green5","yellow1","yellow2","yellow3","yellow4","brown1","brown2","brown3","red1","red2","red3","brown4","peach1","peach2","peach3","pink1","pink2","pink3","pink4","blue1","blue2","blue3","blue4","blue5","blue6","blue7"], range(34)):
+            path = self.driver.find_elements_by_xpath('//*[@id="palette-buttons"]/a')[x]
+            self.color_dict.update({f"{color_name}":path})
+        self.Colors_W =  cycle([self.color_dict.get("grey4"), self.color_dict.get("grey3"), self.color_dict.get("grey2"), self.color_dict.get("grey1")])
+        self.Colors_A =  cycle([self.color_dict.get("green1"), self.color_dict.get("green2"), self.color_dict.get("green3"), self.color_dict.get("green5")])
+        self.Colors_S =  cycle([self.color_dict.get("red1"), self.color_dict.get("red2"), self.color_dict.get("red3")])
+        self.Colors_D =  cycle([self.color_dict.get("brown1"), self.color_dict.get("brown2"), self.color_dict.get("brown3"), self.color_dict.get("brown4"), self.color_dict.get("grey4"), self.color_dict.get("peach3"), self.color_dict.get("white")])
+        self.Colors_AW = cycle([self.color_dict.get("yellow1"), self.color_dict.get("yellow2"), self.color_dict.get("yellow3"), self.color_dict.get("yellow4")])
+        self.Colors_WD = cycle([self.color_dict.get("brown1"), self.color_dict.get("brown2"), self.color_dict.get("brown3"), self.color_dict.get("brown4")])
+        self.Colors_DS = cycle([self.color_dict.get("black"), self.color_dict.get("white")])
+        self.Colors_SA = cycle([self.color_dict.get("blue1"),self.color_dict.get("blue2"),self.color_dict.get("blue3"),self.color_dict.get("blue4"),self.color_dict.get("blue5"),self.color_dict.get("blue6"),self.color_dict.get("blue7")])
+        self.Colors_ALL = cycle([self.color_dict.get("white"),self.color_dict.get("grey1"),self.color_dict.get("grey2"),self.color_dict.get("grey3"),self.color_dict.get("grey4"),self.color_dict.get("black"),self.color_dict.get("green1"),self.color_dict.get("green2"),self.color_dict.get("green3"),self.color_dict.get("green5"),self.color_dict.get("yellow1"),self.color_dict.get("yellow2"),self.color_dict.get("yellow3"),self.color_dict.get("yellow4"),self.color_dict.get("brown1"),self.color_dict.get("brown2"),self.color_dict.get("brown3"),self.color_dict.get("red1"),self.color_dict.get("red2"),self.color_dict.get("red3"),self.color_dict.get("brown4"),self.color_dict.get("peach1"),self.color_dict.get("peach2"),self.color_dict.get("peach3"),self.color_dict.get("pink1"),self.color_dict.get("pink2"),self.color_dict.get("pink3"),self.color_dict.get("pink4"),self.color_dict.get("blue1"),self.color_dict.get("blue2"),self.color_dict.get("blue3"),self.color_dict.get("blue4"),self.color_dict.get("blue5"),self.color_dict.get("blue6"),self.color_dict.get("blue7")])
 
 
 
